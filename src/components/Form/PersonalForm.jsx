@@ -72,7 +72,7 @@ const PersonalForm = () => {
           setResumeData({ ...resumeData, github: e.target.value })
         }
       />
-
+      <label>Profile Pic</label>
       <input type="file" accept="image/*" ref={fileInputRef} onChange={handlePhotoUpload} />
 
       {resumeData.photo && (
