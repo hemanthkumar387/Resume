@@ -1,0 +1,107 @@
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.skill-chip {
+  position: relative;
+  background: #eef2ff;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  cursor: grab;
+  transition: background 0.2s ease;
+}
+
+.skill-chip:hover {
+  background: #e0e7ff;
+}
+
+.skill-chip:active {
+  cursor: grabbing;
+}
+
+.skill-group {
+  margin-top: 12px;
+}
+
+.skill-group strong {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Select wrapper (optional, but recommended) */
+.form-section select {
+  width: 100%;
+  padding: 9px 12px;
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  color: #111827;
+  background-color: #ffffff;
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  /* Remove default browser styles */
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  /* Custom arrow */
+  background-image:
+    linear-gradient(45deg, transparent 50%, #6b7280 50%),
+    linear-gradient(135deg, #6b7280 50%, transparent 50%),
+    linear-gradient(to right, #ffffff, #ffffff);
+  background-position:
+    calc(100% - 18px) calc(50% - 3px),
+    calc(100% - 12px) calc(50% - 3px),
+    100% 0;
+  background-size: 6px 6px, 6px 6px, 2.5em 100%;
+  background-repeat: no-repeat;
+}
+
+/* Focus state */
+.form-section select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* Disabled state (if you ever use it) */
+.form-section select:disabled {
+  background-color: #f3f4f6;
+  cursor: not-allowed;
+  color: #9ca3af;
+}
+
+
+
+/* ❌ Remove */
+.remove-skill {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: none;
+  background: #374151;
+  color: white;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.skill-chip:hover .remove-skill {
+  opacity: 1;
+  background: #dc2626;
+}

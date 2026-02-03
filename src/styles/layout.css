@@ -1,0 +1,47 @@
+.container {
+  display: flex;
+  gap: 32px;
+  padding: 24px;
+  align-items: flex-start;
+}
+
+.resume-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+/* =========================
+   Responsive – Mobile View
+   ========================= */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 16px;
+  }
+
+  /* Resume actions (Download button) */
+  .resume-actions {
+    justify-content: center;     /* center button */
+    margin-bottom: 10px;
+  }
+
+  /* Resume container */
+  .resume-container {
+    width: 100%;
+    overflow-x: auto;            /* allow horizontal scroll if needed */
+  }
+
+  /* Resume scale for mobile */
+  .resume {
+    transform: scale(0.9);
+    transform-origin: top center;
+    margin: 0 auto;
+  }
+
+  /* Form container */
+  .form-container {
+    width: 100%;
+  }
+}

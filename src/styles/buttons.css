@@ -1,0 +1,35 @@
+button {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Download */
+.download-btn {
+  background: #111827;
+  color: white;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.download-btn:hover {
+  background: #1f2937;
+}
+
+/* Clear */
+.clear-btn {
+  background: #e5e7eb;
+}
+
+.clear-btn:hover {
+  background: #d1d5db;
+}
+
+/* Danger */
+.danger-btn {
+  background: #ef4444;
+  color: white;
+}

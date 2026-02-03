@@ -1,0 +1,183 @@
+/* Resume wrapper */
+.resume {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  align-items: center;
+}
+
+/* One A4 page */
+.resume-page {
+  width: 210mm;
+  height: 297mm;
+  padding: 20mm;
+  background: white;
+  box-sizing: border-box;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+/* Invisible measurement container */
+.resume-measure {
+  position: absolute;
+  visibility: hidden;
+  width: 210mm;
+}
+
+/* Typography */
+.resume-page h1 {
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.resume-page h2 {
+  font-size: 18px;
+  border-bottom: 1px solid #111827;
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.contact {
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.contact a {
+  text-decoration: none;
+  color: #111827;
+}
+
+.profile-photo {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.grouped-skill {
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+/* Experience entry wrapper */
+.resume-experience {
+  margin-bottom: 12px; /* space between jobs */
+}
+
+/* Role + company */
+.resume-experience strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Company name spacing (inline with role) */
+.resume-experience strong + span,
+.resume-experience strong {
+  line-height: 1.4;
+}
+
+/* Duration (dates) */
+.resume-experience .duration {
+  font-size: 13px;
+  color: #6b7280; /* subtle gray */
+  margin: 4px 0;
+}
+
+/* Description */
+.resume-experience p:last-child {
+  font-size: 14px;
+  line-height: 1.6; /* 🔥 readability */
+  margin-top: 4px;
+  color: #374151;
+}
+
+/* Education section wrapper */
+.education-item {
+  margin-bottom: 14px; /* space between entries */
+}
+
+/* Degree + course */
+.education-item strong {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Institution */
+.education-item p {
+  margin: 3px 0; /* tight but readable */
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Duration (dates) */
+.education-item .duration {
+  font-size: 13px;
+  color: #6b7280; /* subtle gray */
+  margin-top: 2px;
+}
+
+/* Score / CGPA */
+.education-item p:last-child {
+  font-size: 13px;
+  color: #374151;
+}
+
+/* Project wrapper */
+.project-item {
+  margin-bottom: 16px;
+}
+
+/* 🔥 Keep title + tech together */
+.project-header {
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+/* Title */
+.project-header strong {
+  font-size: 15px;
+  font-weight: 600;
+  display: block;
+}
+
+/* Tech stack */
+.project-tech {
+  font-size: 13px;
+  color: #374151;
+  margin: 2px 0 6px;
+}
+
+/* Description can flow */
+.project-desc {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #374151;
+  margin: 2px;
+}
+
+
+/* Mobile scaling */
+@media (max-width: 768px) {
+  .resume-page {
+    transform: scale(0.9);
+    transform-origin: top center;
+  }
+}
+
+@media print {
+  body {
+    background: none;
+  }
+
+  .resume {
+    gap: 0;
+  }
+
+  .resume-page {
+    box-shadow: none;
+    page-break-after: always;
+  }
+}
