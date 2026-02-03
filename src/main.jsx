@@ -9,6 +9,7 @@ import "./styles/skills.css";
 import "./styles/experience.css";
 import "./styles/resume.css";
 import "./styles/buttons.css";
+import "./styles/sectionreorder.css"
 import { ResumeProvider } from "./context/ResumeProvider";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

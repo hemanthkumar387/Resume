@@ -6,6 +6,10 @@ import DownloadButton from "./components/Download/DownloadButton";
 import ExperienceForm from "./components/Form/ExperienceForm";
 import EducationForm from "./components/Form/EducationForm";
 import ProjectsForm from "./components/Form/ProjectsForm";
+import AchievementsForm from "./components/Form/AchievementsForm";
+import CertificationsForm from "./components/Form/CertificationsForm";
+import HobbiesForm from "./components/Form/HobbiesForm";
+import SectionReorderForm from "./components/Form/SectionReorderForm";
 
 const App = () => {
   const clearResume = () => {
@@ -23,6 +27,12 @@ const App = () => {
         <ExperienceForm />
         <EducationForm />
         <ProjectsForm />
+
+        <AchievementsForm />
+        <CertificationsForm />
+        <HobbiesForm />
+
+        <SectionReorderForm />
         <button className="clear-btn" onClick={clearResume}>
           Clear Resume
         </button>

@@ -16,11 +16,25 @@ export const ResumeProvider = ({ children }) => {
       "Programming Languages": [],
       "Web Technologies": [],
       "Backend Technologies": [],
-      "Databases": [],
+      Databases: [],
     },
     education: [],
     experience: [],
     projects: [],
+    achievements: [], // ✅ NEW
+    certifications: [], // ✅ NEW
+    hobbies: [], // ✅ NEW
+
+    sectionOrder: [
+      "summary",
+      "skills",
+      "experience",
+      "projects",
+      "education",
+      "achievements",
+      "certifications",
+      "hobbies",
+    ],
   };
 
   const [resumeData, setResumeData] = useState(() => {
