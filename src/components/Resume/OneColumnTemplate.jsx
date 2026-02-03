@@ -180,6 +180,7 @@ const OneColumnTemplate = () => {
   ]);
 
   return (
+    <div className="resume-container">
     <div id="resume" className="resume">
       {/* MEASURE CONTAINER */}
       <div className="resume-measure" ref={measureRef}>
@@ -216,6 +217,7 @@ const OneColumnTemplate = () => {
           ))}
         </div>
       ))}
+    </div>
     </div>
   );
 };
