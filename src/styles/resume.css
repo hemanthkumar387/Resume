@@ -29,6 +29,7 @@
   box-sizing: border-box;
   box-shadow: 0 10px 30px rgba(0,0,0,0.08);
   flex-shrink: 0;        /* 🔥 CRITICAL: prevents shrinking */
+  margin-bottom: 20px;
 }
 
 /* =========================
