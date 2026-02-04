@@ -4,6 +4,10 @@ import { ResumeContext } from "../../context/ResumeContext";
 import {
   DndContext,
   closestCenter,
+  useSensor,
+  useSensors,
+  PointerSensor,
+  TouchSensor,
 } from "@dnd-kit/core";
 
 import {
@@ -16,13 +20,8 @@ import { CSS } from "@dnd-kit/utilities";
 
 /* Single draggable row */
 const SortableItem = ({ id }) => {
-  const {
-    attributes,
-    listeners,
-    setNodeRef,
-    transform,
-    transition,
-  } = useSortable({ id });
+  const { attributes, listeners, setNodeRef, transform, transition } =
+    useSortable({ id });
 
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -45,6 +44,20 @@ const SortableItem = ({ id }) => {
 const SectionReorderForm = () => {
   const { resumeData, setResumeData } = useContext(ResumeContext);
 
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        distance: 8, // mouse drag
+      },
+    }),
+    useSensor(TouchSensor, {
+      activationConstraint: {
+        delay: 200, // ⏱️ long-press
+        tolerance: 5,
+      },
+    }),
+  );
+
   const handleDragEnd = (event) => {
     const { active, over } = event;
     if (!over || active.id === over.id) return;
@@ -66,10 +79,7 @@ const SectionReorderForm = () => {
     <div className="form-section">
       <h3>Reorder Resume Sections</h3>
 
-      <DndContext
-        collisionDetection={closestCenter}
-        onDragEnd={handleDragEnd}
-      >
+      <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
         <SortableContext
           items={resumeData.sectionOrder}
           strategy={verticalListSortingStrategy}

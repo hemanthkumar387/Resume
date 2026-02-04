@@ -11,6 +11,11 @@
   display: flex;
   align-items: center;
   gap: 8px;
+
+    /* 🔥 MOBILE FIXES */
+  touch-action: none;      /* stops scroll stealing */
+  user-select: none;       /* prevents text highlight */
+  -webkit-user-select: none;
 }
 
 .section-drag-item:active {
